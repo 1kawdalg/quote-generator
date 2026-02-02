@@ -48,7 +48,7 @@ public class User {
     private boolean enabled = true;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Quote> quotes = new HashSet<>(); // TODO: вернуться и до конца разобраться с данным полем и стратегией загрузки
+    private Set<Quote> quotes = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {

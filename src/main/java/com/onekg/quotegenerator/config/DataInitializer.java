@@ -15,13 +15,13 @@ public class DataInitializer implements CommandLineRunner {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         if (userRepository.count() == 0) {
             createTestUser();
         }
     }
 
-    // TODO: отключить данный метод при продакшене
+    // TODO: turn off this method when project will deploy at production
     private void createTestUser() {
         User testUser = new User();
 

@@ -1,7 +1,6 @@
 package com.onekg.quotegenerator.config;
 
 import com.onekg.quotegenerator.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -65,7 +64,7 @@ public class SecurityConfig {
                         .deleteCookies("JSESSIONID")
                         .invalidateHttpSession(true)
                         .permitAll())
-                .csrf(csrf -> csrf // TODO: обязательно отключить при production
+                .csrf(csrf -> csrf // TODO: turn off it when project will deploy at production
                         .ignoringRequestMatchers("/h2-console/**"))
                 .headers(headers -> headers
                         .frameOptions(frameOptions -> frameOptions
