@@ -8,6 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        main {
+            grid-area: main;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
         .hero-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -23,80 +31,95 @@
         .feature-card:hover {
             transform: translateY(-10px);
         }
+
+        .wrapper {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+
+            grid-template-areas:
+                "main"
+                "footer";
+        }
     </style>
 </head>
 <body>
-    <div class="hero-section">
-        <div class="container">
-            <h1 class="display-3 mb-4">Personal Quotes Generator</h1>
+    <div class="wrapper">
+        <main>
+            <div class="hero-section">
+                <div class="container">
+                    <h1 class="display-3 mb-4">Personal Quotes Generator</h1>
 
-            <p class="lead mb-5">
-                Make inspiring quotes about different topics.
-                Every quote is unique and personalised for you!
-            </p>
+                    <p class="lead mb-5">
+                        Make inspiring quotes about different topics.
+                        Every quote is unique and personalised for you!
+                    </p>
 
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <a th:href="@{/register}" class="btn btn-light btn-lg px-4 me-md-2">
-                    Start
-                </a>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <a th:href="@{/register}" class="btn btn-light btn-lg px-4 me-md-2">
+                            Start
+                        </a>
 
-                <a th:href="@{/login}" class="btn btn-outline-light btn-lg px-4">
-                    Sign in
-                </a>
+                        <a th:href="@{/login}" class="btn btn-outline-light btn-lg px-4">
+                            Sign in
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="container my-5">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h2 class="display-5">Features</h2>
+                        <p class="text-muted">What do things make our generator to unique</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">🎯 Personal Quotes</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">📚 Different Categories</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">💾 Quotes History</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light py-5">
+                    <div class="container text-center">
+                        <h2 class="mb-4">Could you like start?</h2>
+
+                        <a th:href="@{/register}" class="btn btn-primary btn-lg">
+                            Sign up free
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white text-center py-4 mt-5">
+            <div class="container">
+                <p class="mb-0">© 2026 Quotes Generator. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-
-    <div class="container my-5">
-        <div class="row text-center mb-5">
-            <div class="col">
-                <h2 class="display-5">Features</h2>
-                <p class="text-muted">What do things make our generator to unique</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">🎯 Personal Quotes</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">📚 Different Categories</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">💾 Quotes History</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-light py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Could you like start?</h2>
-
-                <a th:href="@{/register}" class="btn btn-primary btn-lg">
-                    Sign up free
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-0">© 2026 Quotes Generator. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
