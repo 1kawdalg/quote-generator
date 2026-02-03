@@ -1,0 +1,43 @@
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.quote-card {
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 125px;
+
+    grid-template-areas:
+                    "header"
+                    "main"
+                    "footer";
+}
