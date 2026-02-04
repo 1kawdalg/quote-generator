@@ -2,12 +2,14 @@ package com.onekg.quotegenerator.model;
 
 import com.onekg.quotegenerator.util.DateUtils;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
 @Getter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class BaseEntity {
 
     @Id
