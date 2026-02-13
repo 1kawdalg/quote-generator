@@ -1,6 +1,6 @@
 package com.onekg.quotegenerator.service;
 
-import com.onekg.quotegenerator.util.QuoteUtils;
+import com.onekg.quotegenerator.util.QuoteHelper;
 import com.onekg.quotegenerator.util.StringListUtils;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public class QuoteGeneratorService {
     private final Random random = new Random();
 
     public String generateQuote(String category) {
-        String[][] wordArray = QuoteUtils.getWordsByCategory(category);
+        String[][] wordArray = QuoteHelper.getWordsByCategory(category);
         StringBuilder quote = new StringBuilder();
 
         for (int i = 0; i < wordArray.length; i++) {

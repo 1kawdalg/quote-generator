@@ -1,6 +1,9 @@
 package com.onekg.quotegenerator.util;
 
-public class QuoteUtils {
+public final class QuoteHelper {
+    private QuoteHelper() {
+        throw new UnsupportedOperationException("Utility class");
+    }
 
     private static final String[][] motivationalWords = {
             {"Success", "Dream", "Goal", "Aspiration", "Hope", "Faith", "Desire", "Ambition", "Achievement", "Vision"},
